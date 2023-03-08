@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="style.css" />
     <title>Text Editor</title>
   </head>
+
   <body>
     <div class="container">
       <div class="options">
@@ -31,11 +32,12 @@
         <button id="subscript" class="option-button script">
           <i class="fa-solid fa-subscript"></i>
         </button>
-        <button id="insertOrderList" class="option-button">
-          <i class="fa-solid fa-list-ol"></i>
+
+        <button id="insertOrderedList" class="option-button">
+          <div class="fa-solid fa-list-ol"></div>
         </button>
-        <button id="insertUnorderList" class="option-button">
-          <i class="fa-solid fa-list-ul"></i>
+        <button id="insertUnorderedList" class="option-button">
+          <i class="fa-solid fa-list"></i>
         </button>
 
         <button id="undo" class="option-button">
@@ -46,10 +48,10 @@
         </button>
 
         <button id="createLink" class="adv-option-button">
-          <i class="fa-solid fa-link"></i>
+          <i class="fa fa-link"></i>
         </button>
         <button id="unlink" class="option-button">
-          <i class="fa-solid fa-link-slash"></i>
+          <i class="fa fa-unlink"></i>
         </button>
 
         <button id="justifyLeft" class="option-button align">
@@ -64,7 +66,6 @@
         <button id="justifyFull" class="option-button align">
           <i class="fa-solid fa-align-justify"></i>
         </button>
-
         <button id="indent" class="option-button spacing">
           <i class="fa-solid fa-indent"></i>
         </button>
@@ -79,21 +80,21 @@
           <option value="H5">H5</option>
           <option value="H6">H6</option>
         </select>
-
-        <select id="fontName" class="adv-options-button"></select>
-        <select id="fontSize" class="adv-options-button"></select>
+        <select id="fontName" class="adv-option-button"></select>
+        <select id="fontSize" class="adv-option-button"></select>
 
         <div class="input-wrapper">
-          <label for="fontColor">Font Color: </label>
-          <input type="color" id="fontColor" class="adv-options-button" />
+          <input type="color" id="foreColor" class="adv-option-button" />
+          <label for="foreColor">Font Color</label>
         </div>
         <div class="input-wrapper">
-          <label for="backColor">Highlight Color: </label>
-          <input type="color" id="backColor" class="adv-options-button" />
+          <input type="color" id="backColor" class="adv-option-button" />
+          <label for="backColor">Highlight Color</label>
         </div>
       </div>
       <div id="text-input" contenteditable="true"></div>
     </div>
+
     <script src="index.js"></script>
   </body>
 </html>

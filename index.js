@@ -1,23 +1,25 @@
 let optionsButtons = document.querySelectorAll('.option-button');
-let advancedOptionButton = document.querySelectorAll('.adv.option-button');
-let alignButtons = document.querySelectorAll('.align');
-let spacingButtons = document.querySelectorAll('.spacing');
-let formatButtons = document.querySelectorAll('.format');
-let scriptButtons = document.querySelectorAll('.script');
+let advancedOptionButton = document.querySelectorAll('.adv-option-button');
 let fontName = document.getElementById('fontName');
 let fontSizeRef = document.getElementById('fontSize');
 let writingArea = document.getElementById('text-input');
 let linkButton = document.getElementById('createLink');
+let alignButtons = document.querySelectorAll('.align');
+let spacingButtons = document.querySelectorAll('.spacing');
+let formatButtons = document.querySelectorAll('.format');
+let scriptButtons = document.querySelectorAll('.script');
 
 let fontList = [
   'Arial',
   'Verdana',
   'Times New Roman',
+  'Garamond',
+  'Georgia',
   'Courier New',
   'Cursive',
 ];
 
-const initializer = () => {
+const intializer = () => {
   highlighter(alignButtons, true);
   highlighter(spacingButtons, true);
   highlighter(formatButtons, false);
@@ -57,8 +59,7 @@ advancedOptionButton.forEach((button) => {
 });
 
 linkButton.addEventListener('click', () => {
-  let userLink = prompt('Enter a URL');
-
+  let userLink = prompt('Enter a URL?');
   if (/http/i.test(userLink)) {
     modifyText(linkButton.id, false, userLink);
   } else {
@@ -87,9 +88,9 @@ const highlighter = (className, needsRemoval) => {
 };
 
 const highlighterRemover = (className) => {
-    className.forEach(button => {
-        button.classList.remove("active")
-    })
-}
+  className.forEach((button) => {
+    button.classList.remove('active');
+  });
+};
 
-window.onload =initializer()
+window.onload = intializer();
